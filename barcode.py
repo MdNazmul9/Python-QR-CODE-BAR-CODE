@@ -23,3 +23,12 @@ image = treepoem.generate_barcode(
     options= {"includetext": True}
 )
 image.convert("1").save("output_qrcode_or_barcode.png")
+
+
+import treepoem
+image = treepoem.generate_barcode(
+    barcode_type="code128",  # One of the BWIPP supported codes.
+    data="t-18", # ekta char & - require
+    options= {"includetext": True, "height":0.2, "showborder":True, "borderwidth":1, "borderbottom":8},
+)
+image.convert("1").save("output.png")
